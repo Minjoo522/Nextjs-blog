@@ -1,0 +1,38 @@
+[
+  {
+    "id": "post-1",
+    "title": "리액트 꿀팁",
+    "summary": "React로 개발하는 꿀팁 정리",
+    "category": "Front End",
+    "createdAt": "2023-10-11",
+    "image": "1.jpg",
+    "featured": true
+  },
+  {
+    "id": "post-2",
+    "title": "Next.js 개념 정리",
+    "summary": "A부터 Z까지 Next.js 개념 정리",
+    "category": "Front End",
+    "createdAt": "2023-10-09",
+    "image": "2.jpg",
+    "featured": false
+  },
+  {
+    "id": "post-3",
+    "title": "Python Django로 서버 개발하기",
+    "summary": "Django 이렇게까지 써봤다!",
+    "category": "Back End",
+    "createdAt": "2023-10-02",
+    "image": "3.jpg",
+    "featured": true
+  },
+  {
+    "id": "post-4",
+    "title": "2024년 계획하기",
+    "summary": "벌써하는 2024년 계획!",
+    "category": "My Life",
+    "createdAt": "2023-10-02",
+    "image": "4.jpg",
+    "featured": true
+  }
+]
