@@ -1,5 +1,5 @@
-import { getFeaturedPosts, getPosts } from '@/service/posts';
-import PostCard from './PostCard';
+import { getFeaturedPosts } from '@/service/posts';
+import PostGrid from './PostGrid';
 
 export default async function FeaturedPosts() {
   const posts = await getFeaturedPosts();
@@ -7,13 +7,7 @@ export default async function FeaturedPosts() {
   return (
     <section>
       <h3>Featured Posts</h3>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <PostCard post={post} />
-          </li>
-        ))}
-      </ul>
+      <PostGrid posts={posts} />
     </section>
   );
 }
