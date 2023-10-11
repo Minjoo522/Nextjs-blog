@@ -13,19 +13,24 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className={sans.className}>
-      <body>
-        <header>
+      <body className='flex flex-col w-full max-w-screen-2xl mx-auto'>
+        <header className='flex justify-between p-4'>
           <Link href='/'>
-            <h1>Minjoo</h1>
+            <h1 className='font-extrabold text-2xl'>Minjoo</h1>
           </Link>
-          <nav>
+          <nav className='flex gap-4'>
             <Link href='/'>Home</Link>
             <Link href='/posts'>Posts</Link>
             <Link href='/about'>About</Link>
             <Link href='/contact'>Contact</Link>
           </nav>
         </header>
-        {children}
+        <main className='grow'>{children}</main>
+        <footer>
+          <p className='p-2 bg-slate-500 text-white text-sm text-center font-semibold'>
+            {"Welcome to Minjoo's Blog | All Right Reserved."}
+          </p>
+        </footer>
       </body>
     </html>
   );
