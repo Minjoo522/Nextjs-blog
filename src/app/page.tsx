@@ -6,7 +6,6 @@ export default function Home() {
     <>
       <Hero />
       <FeaturedPosts />
-      <section>Posts</section>
     </>
   );
 }
