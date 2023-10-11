@@ -1,5 +1,10 @@
-import Image from 'next/image';
+import Profile from '@/components/home/Profile';
 
 export default function Home() {
-  return <section>Main</section>;
+  return (
+    <>
+      <Profile />
+      <section>Posts</section>
+    </>
+  );
 }
