@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import ProfileImage from '../../../public/images/mainprofile.png';
+import ProfileImage from '../../public/images/mainprofile.png';
 import Link from 'next/link';
 
-export default function Profile() {
+export default function Hero() {
   return (
     <section className='flex items-center justify-center mt-4'>
-      <Image src={ProfileImage} alt='Profile 사진' className='rounded-full w-64' />
+      <Image src={ProfileImage} alt='Profile 사진' className='rounded-full w-64' priority />
       <div>
         <h2 className='font-bold text-2xl'>{"Hi, I'm Minjoo!"}</h2>
         <p className='my-2'>
