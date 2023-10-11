@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className='flex items-center justify-center mt-4'>
+    <section className='flex flex-col items-center justify-center text-center lg:flex-row lg:text-start p-4'>
       <Image src={ProfileImage} alt='Profile 사진' className='rounded-full w-64' priority />
       <div>
         <h2 className='font-bold text-2xl'>{"Hi, I'm Minjoo!"}</h2>
