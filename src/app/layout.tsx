@@ -1,7 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
-import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const sans = Open_Sans({ subsets: ['latin'] });
 
@@ -14,23 +15,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en' className={sans.className}>
       <body className='flex flex-col w-full max-w-screen-2xl mx-auto'>
-        <header className='flex justify-between p-4'>
-          <Link href='/'>
-            <h1 className='font-extrabold text-2xl'>Minjoo</h1>
-          </Link>
-          <nav className='flex gap-4'>
-            <Link href='/'>Home</Link>
-            <Link href='/posts'>Posts</Link>
-            <Link href='/about'>About</Link>
-            <Link href='/contact'>Contact</Link>
-          </nav>
-        </header>
+        <Header />
         <main className='grow'>{children}</main>
-        <footer>
-          <p className='p-2 bg-slate-500 text-white text-sm text-center font-semibold'>
-            {"Welcome to Minjoo's Blog | All Right Reserved."}
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
