@@ -1,9 +1,9 @@
-import Profile from '@/components/home/Profile';
+import Hero from '@/components/Hero';
 
 export default function Home() {
   return (
     <>
-      <Profile />
+      <Hero />
       <section>Posts</section>
     </>
   );
