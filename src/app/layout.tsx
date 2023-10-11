@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
+import Link from 'next/link';
 
 const sans = Open_Sans({ subsets: ['latin'] });
 
@@ -12,7 +13,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className={sans.className}>
-      <body>{children}</body>
+      <body>
+        <header>
+          <Link href='/'>
+            <h1>Minjoo</h1>
+          </Link>
+          <nav>
+            <Link href='/'>Home</Link>
+            <Link href='/posts'>Posts</Link>
+            <Link href='/about'>About</Link>
+            <Link href='/contact'>Contact</Link>
+          </nav>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
