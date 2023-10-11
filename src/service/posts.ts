@@ -1,23 +1,27 @@
+import { readFile } from 'fs/promises';
 import path from 'path';
-import { promises as fs } from 'fs';
 
 export type Post = {
   id: string;
   title: string;
   summary: string;
   category: string;
-  createdAt: string;
+  createdAt: Date;
   image: string;
   featured: boolean;
 };
 
 export async function getPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
-  const data = await fs.readFile(filePath, 'utf-8');
-  return JSON.parse(data);
+  return (
+    readFile(filePath, 'utf-8')
+      .then<Post[]>(JSON.parse)
+      // 최신순으로 정리되도록 가공
+      .then((posts) => posts.sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1)))
+  );
 }
 
 export async function getFeaturedPosts(): Promise<Post[]> {
-  const posts = await getPosts();
-  return posts.filter((post) => post.featured === true);
+  return getPosts() //
+    .then((posts) => posts.filter((post) => post.featured));
 }
